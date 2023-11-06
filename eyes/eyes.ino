@@ -1,4 +1,13 @@
-#include <Stepper.h>
+/******************************************************************************
+  OLED Eyeballs for 128x64 OLED by Vin.X.Mod 
+
+  Online Image to C Array Converter at https://lvgl.io/tools/imageconverter
+  Adafruit 128x64 OLED Graphic Display https://www.adafruit.com/product/326
+
+  For more information see the wonderful tutorial by Rui Santos
+  https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/
+******************************************************************************/
+
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -7,6 +16,7 @@
 #define SCREEN_HEIGHT 64
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
 
 static const unsigned char PROGMEM image_data_DISTRESSED_EYESarray[] = { 
   // ARRAY for DISTRESSED_EYES
@@ -212,16 +222,8 @@ static const unsigned char PROGMEM image_data_EYES_RIGHTarray[] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,    
 };
 
-
-
-
-
-// creamos el objeto motor
-Stepper motor(2048, 8, 10, 9, 11); 
- 
 void setup() {
   Serial.begin(9600);
-  motor.setSpeed(4);
    if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;);
@@ -234,24 +236,10 @@ void setup() {
 // Displays DISTRESSED_EYES on the screen
   display.drawBitmap(0, 0, image_data_DISTRESSED_EYESarray, 128, 64, 1);
   display.display();
-
 }
 
- 
 void loop() {
-
-  delay(600);
-  
-  Serial.println("Analog pin: "); // display analog values to serial
-  Serial.println(analogRead(A4));
-  
-
-  if (analogRead(A0) < 115) {
-    motor.step(250); // cantidad de pasos
-    delay(1000);      // 2 seg.
-    motor.step(-250); // cantidad de pasos
-    
-    } 
+// Use Void Loop to display multipule images
 
   delay(500); // Pause for half second
   display.clearDisplay();  // Clear the buffer
@@ -266,5 +254,5 @@ void loop() {
 // Displays EYES_RIGHT on the screen
   display.drawBitmap(0, 0, image_data_EYES_RIGHTarray, 128, 64, 1);
   display.display();
-  
 }
+// End of Arduino Sketch  
