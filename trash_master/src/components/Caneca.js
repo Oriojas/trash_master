@@ -9,7 +9,7 @@ const Caneca = () => {
           <Card.Title>Caneca trash_master</Card.Title>
           <h1>👀</h1>
           <Card.Text>
-            Gracias por reciclar ya puedes reclamar tu recompensa 🥟🥟🥟
+            Gracias por reciclar ya puedes reclamar tu recompensa 🍬🍬🍬
           </Card.Text>
         </Card.Body>
       </Card>

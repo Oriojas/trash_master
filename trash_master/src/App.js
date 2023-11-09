@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <br></br>
         <Row>
           <Col className="custom-border">
             <h2>TrashMinator</h2>
@@ -25,13 +26,25 @@ function App() {
         <table>
           <tbody>
             <tr>
-              <td>Angélica Riojas</td>
+              <td>Santiago Abril</td>
+            </tr>
+            <tr>
+              <td>Gabriela Chavez</td>
             </tr>
             <tr>
               <td>Karen Correa</td>
             </tr>
             <tr>
-              <td>Los otros ...</td>
+              <td>Samuel Franco</td>
+            </tr>
+            <tr>
+              <td>Angelica Riojas</td>
+            </tr>
+            <tr>
+              <td>Ethan Tejero</td>
+            </tr>
+            <tr>
+              <td>Iván Vanegas</td>
             </tr>
           </tbody>
         </table>
