@@ -8,7 +8,9 @@ function App() {
       <header className="App-header">
         <Row>
           <Col className="custom-border">
+            <h2>TrashMinator</h2>
             <h3>Colegio Bilingüe Jose Allamano</h3>
+            <p>Recicla para el futuro</p>
           </Col>
           <br></br>
           <Col className="custom-border">
